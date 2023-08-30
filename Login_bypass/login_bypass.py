@@ -30,8 +30,8 @@ def modify_request(url):
         'HTTP/1.1 200\r\n',
         'HTTP/1.1 200\r\nServer: Hsengine/1.4.1\r\nDate: Mon, 17 May 2021 16:13:43 GMT\r\nContent-Type: application/json;charset=UTF-8\r\nConnection: close\r\nX-Frame-Options: SAMEORIGIN\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nAccept-Ranges: bytes\r\nVary: Accept-Charset, Accept-Encoding, Accept-Language, Accept\r\nContent-Length: 61\r\n'
     )
-    print("Modified Response:")
-    print(modified_response)
+    # print("Modified Response:")
+    # print(modified_response)
 
     if '/cluster/dashboard' in response.url:
         print(f"{response.url} is vulnerable.")
@@ -40,8 +40,8 @@ def modify_request(url):
 
     # Remove HTML tags from the response content
     clean_response = re.sub('<[^<]+?>', '', modified_response)
-    print("Clean Response:")
-    print(clean_response)
+    # print("Clean Response:")
+    # print(clean_response)
 
 parser = argparse.ArgumentParser(description='修改请求和返回包的示例程序')
 group = parser.add_mutually_exclusive_group(required=True)
